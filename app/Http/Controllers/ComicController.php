@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreComicRequest;
-use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
+
+use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
@@ -15,19 +15,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('welcome');
-    }
-
-    public function comics()
-    {
         $comics = Comic::all();
         //dd($comics);
-        return view('comics', compact('comics'));
+        return view('comics', ['comics' => $comics]);
     }
-
-
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -42,10 +33,10 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreComicRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -53,21 +44,22 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comic  $comic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
     {
-        //
+        //dd($comic);
+        return view('comics.show', compact('comic'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comic  $comic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
+    public function edit($id)
     {
         //
     }
@@ -75,11 +67,11 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateComicRequest  $request
-     * @param  \App\Models\Comic  $comic
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateComicRequest $request, Comic $comic)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -87,10 +79,10 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comic  $comic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
         //
     }

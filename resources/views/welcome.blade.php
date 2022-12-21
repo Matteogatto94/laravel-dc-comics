@@ -7,7 +7,7 @@
 
     <div class="content text-center">
         <h3>Consulta la nostra vastissima scelta di fumetti!</h3>
-        <a href="{{ route('comics') }}" class="btn btn-primary">Clicca Qui</a>
+        <a href="{{route('comics.index')}}" class="btn btn-primary">Clicca Qui</a>
     </div>
 
 </div>

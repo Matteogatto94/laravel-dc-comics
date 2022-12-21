@@ -11,17 +11,19 @@
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @forelse($comics as $comic)
                 <div class="col">
-                    <div class="card">
-                        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
-                        <div class="card-body">
-                            <h6 class="fw-normal">{{$comic->title}}</h6>
-                            <p>{{$comic->description}}</p>
-                            <p>{{$comic->series}}</p>
-                            <p>Prezzo: {{$comic->price}}</p>
-                            <p>Uscito nel: {{$comic->sale_date}}</p>
-                            <p>Tipo: {{$comic->type}}</p>
+                    <a href="{{route('comics.show', $comic->id)}}">
+                        <div class="card">
+                            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+                            <div class="card-body">
+                                <h6 class="fw-normal">{{$comic->title}}</h6>
+                                <p>{{$comic->description}}</p>
+                                <p>{{$comic->series}}</p>
+                                <p>Prezzo: {{$comic->price}}</p>
+                                <p>Uscito nel: {{$comic->sale_date}}</p>
+                                <p>Tipo: {{$comic->type}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 @empty
                 <div class="col-12">
