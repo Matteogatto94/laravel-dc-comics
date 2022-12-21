@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
-use App\Http\Controllers\Controller;
+use App\Models\Comic;
 
 class ComicController extends Controller
 {
@@ -21,8 +20,14 @@ class ComicController extends Controller
 
     public function comics()
     {
-        return view('comics');
+        $comics = Comic::all();
+        //dd($comics);
+        return view('comics', compact('comics'));
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
