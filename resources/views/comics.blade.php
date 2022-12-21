@@ -6,8 +6,8 @@
     <button type="button" class="btn btn-primary btn-lg">CURRENT SERIES</button>
 
     <div class="content text-center">
-        <h3>Consulta la nostra vastissima scelta di fumetti!</h3>
-        <a href="{{ route('comics') }}" class="btn btn-primary">Clicca Qui</a>
+        <h3>I nostri fumetti:</h3>
+
     </div>
 
 </div>

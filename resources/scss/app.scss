@@ -1,1 +1,95 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.menu {
+    a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.searchbar {
+    padding-top: 0.5rem;
+    border-bottom: 1px solid blue;
+    width: 150px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+#site_footer {
+    background-image: url(../img/footer-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.follow_us {
+    color: #0282F9;
+    font-weight: bold;
+}
+
+.footer_up {
+    padding: 5rem 0;
+
+    h3 {
+        color: white;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+
+            a {
+                text-decoration: none;
+                color: lightgray;
+            }
+        }
+    }
+}
+
+.bg {
+    background-image: url('../img/dc-logo-bg.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    background-image: url(../img/jumbotron.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.banner_list {
+    margin-top: 3rem;
+    padding: 1rem;
+
+    .locator {
+        width: 40px;
+    }
+
+    img {
+        width: 70px;
+    }
+}
+
+.contacts {
+    background-color: #303030;
+    height: 100px;
+    padding: 2rem 0;
+    align-items: center;
+}
