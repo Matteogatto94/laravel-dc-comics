@@ -11,7 +11,7 @@
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @forelse($comics as $comic)
                 <div class="col">
-                    <a href="{{route('comics.show', $comic->id)}}">
+                    <a href="{{route('guest.comics.show', $comic->id)}}">
                         <div class="card">
                             <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
                             <div class="card-body">
