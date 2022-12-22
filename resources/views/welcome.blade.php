@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron"></div>
 <div class="container">
-    <button type="button" class="btn btn-primary btn-lg">CURRENT SERIES</button>
+    <a class="btn btn-primary btn-lg">CURRENT SERIES</a>
 
     <div class="content text-center">
         <h3>Consulta la nostra vastissima scelta di fumetti!</h3>
