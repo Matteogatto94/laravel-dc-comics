@@ -99,11 +99,21 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateComicRequest $request, Comic $comic)
+    public function update(Request $request, Comic $comic)
     {
         //dd($request->all(), $comic);
 
-        $data = [
+        $val_data = $request->validate([
+            'title' => 'required|min:10|max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable',
+            'series' => 'nullable|max:50',
+            'sale_date' => 'nullable|max:15',
+            'type' => 'nullable|max:20'
+        ]);
+
+        /*$data = [
             'title' => $request['title'],
             'description' => $request['description'],
             'thumb' => $request['thumb'],
@@ -111,8 +121,8 @@ class ComicController extends Controller
             'series' => $request['series'],
             'sale_date' => $request['sale_date'],
             'type' => $request['type'],
-        ];
-        $comic->update($data);
+        ];*/
+        $comic->update($val_data);
 
         return to_route('comics.index')->with('message', 'Comic Update Succefully');
     }

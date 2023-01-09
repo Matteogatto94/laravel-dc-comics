@@ -4,15 +4,7 @@
 
 <div class="container mb-5">
     <h1 class="py-3">Create a new Comic</h1>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+    @include('partials.errors')
     <form action="{{route('comics.store')}}" method="post" class="card p-3">
         @csrf
 
