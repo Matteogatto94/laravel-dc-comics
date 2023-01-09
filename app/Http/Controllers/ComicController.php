@@ -38,10 +38,25 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreComicRequest $request)
+    public function store(Request $request)
     {
         //dd($request->all());
-        $comic = new Comic();
+
+        $val_data = $request->validate([
+            'title' => 'required|min:10|max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable|max:255',
+            'price' => 'nullable',
+            'series' => 'nullable|max:50',
+            'sale_date' => 'nullable|max:15',
+            'type' => 'nullable|max:20'
+        ]);
+
+        //dd($val_data);
+
+        Comic::create($val_data);
+
+        /*$comic = new Comic();
         $comic->title = $request['title'];
         $comic->description = $request['description'];
         $comic->thumb = $request['thumb'];
@@ -49,7 +64,7 @@ class ComicController extends Controller
         $comic->series = $request['series'];
         $comic->sale_date = $request['sale_date'];
         $comic->type = $request['type'];
-        $comic->save();
+        $comic->save();*/
 
         return to_route('comics.index');
     }
